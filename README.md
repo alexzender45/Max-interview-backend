@@ -16,7 +16,7 @@ Max-interview-backend is a backend service designed to support collaborative doc
 ## Installation Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/max-interview-backend.git
+   git clone https://github.com/alexzender45/max-interview-backend.git
    cd max-interview-backend
    ```
 
@@ -50,6 +50,14 @@ Max-interview-backend is a backend service designed to support collaborative doc
    ```
 
 3. The server will be accessible at `http://localhost:4000`.
+
+## Swagger Documentation
+1. After starting the application, you can access the Swagger UI at:
+   ```
+   http://localhost:4000/api-docs
+   ```
+
+2. The Swagger UI provides an interactive interface to explore the API endpoints, view request/response formats, and test the API directly from the browser.
 
 ## API Documentation
 - **POST /api/auth/login**: Authenticate a user and return a JWT token.

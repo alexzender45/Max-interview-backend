@@ -24,13 +24,13 @@ interface IDocument extends Document {
     version: number;
     createdBy: Schema.Types.ObjectId;
     collaborators: Schema.Types.ObjectId[];
-    operations: IOperation[]; // Ensure correct structure
+    operations: IOperation[];
     history: IHistory[];
 }
 
 const documentSchema = new Schema<IDocument>({
     content: { type: String, required: true, default: '' },
-    version: { type: Number, required: true, default: 0 }, // ✅ Enforce version tracking
+    version: { type: Number, required: true, default: 0 },
     createdBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     collaborators: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     operations: [{

@@ -15,12 +15,10 @@ const errorHandler = (
     res: Response,
     next: NextFunction
 ) => {
-    // Set default values
     let statusCode = err.statusCode || 500;
     let message = err.message || 'Internal Server Error';
     let errors = err.errors || undefined;
 
-    // Handle different error types
     if (err instanceof MongooseError.ValidationError) {
         statusCode = 400;
         message = 'Validation Error';
@@ -38,7 +36,6 @@ const errorHandler = (
         message = 'Invalid token';
     }
 
-    // Log error details in development
     if (process.env.NODE_ENV === 'development') {
         console.error(`[${new Date().toISOString()}] Error:`, {
             message: err.message,
@@ -47,7 +44,6 @@ const errorHandler = (
         });
     }
 
-    // Send error response
     res.status(statusCode).json({
         success: false,
         message,

@@ -1,9 +1,8 @@
 import jwt from 'jsonwebtoken';
 import { RequestHandler } from 'express';
 import Document from '../models/Document';
-import User from '../models/User'; // Changed to default import
+import User from '../models/User';
 
-// Extend Express Request type in a separate declaration file (src/types/express.d.ts)
 declare global {
   namespace Express {
     interface Request {
